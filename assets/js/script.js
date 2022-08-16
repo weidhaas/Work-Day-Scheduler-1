@@ -1,7 +1,8 @@
-const d = new Date();
-document.getElementById("currentDay").innerHTML = d.toDateString();
-console.log(today.toLocaleDateString("en-US", options))
 
+//date 
+
+const d = moment().format("dddd, MMMM Do, YYYY");
+document.getElementById("currentDay").innerHTML = d;
 
 // variables
 $(document).ready(function() {
@@ -30,7 +31,7 @@ $(document).ready(function() {
       const currentHour = moment().hours();
       console.log(currentHour);
       // loop through rows add color class based on time
-      $('.js-row').each(function() {
+      $('.row').each(function() {
         const rowHour = parseInt($(this).attr('data-time'));
         if (rowHour < currentHour) {
           $(this).addClass('gray');
